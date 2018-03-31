@@ -1,13 +1,16 @@
 {
-  "name": "gallery",
+  "name": "koa-album",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "a web album application based on koa and node.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Lemon",
+  "repository": {
+    "github": "https://github.com/Lemonreds/koa-album"
+  },
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
