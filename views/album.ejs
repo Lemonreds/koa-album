@@ -1,0 +1,23 @@
+
+
+<%- partial('header', {title: album.name,des: album.des})%>
+
+<div class='album-entry'> 
+
+    <div class='album-inner'>
+        <% album.photos.forEach((photo , idx)=>{%>            
+            <div class='album-img'>
+                <% if (idx<6 ){%>
+                 <img src='<%- photo %>'/>  
+                <%} else{%>
+                 <img class='lazyload'  data-src='<%- photo %>'/>                
+                <%}%>
+            </div>
+        <% })%>       
+    </div>   
+    <div class='album-footer'>
+        <span>
+            <%-album.photos.length%> photos.
+        </span>        
+    </div>
+</div>

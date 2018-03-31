@@ -1,0 +1,29 @@
+
+
+
+<%- partial('header', {title:sites.title,des:sites.des})%>
+
+<div class='index-entry'>  
+
+   <% if(albums){%>
+
+        <% albums.forEach((alum,idx)=>{%>  
+        <article class='index-item'>
+            
+            <% if(idx < 3 ){%>
+            <div class='thumb'style="background-image:url('<%-alum.thumb%>')"></div>
+            <%}else{%>
+            <div class='thumb lazyload' data-src="<%-alum.thumb%>"></div>
+            <%}%>
+
+            <a class='links' href='<%- alum.href %>'>              
+                                                       
+                <h3><%- alum.name %></h3>                
+                <p><%- alum.time %> | <%- alum.length %>.</p> 
+                <p><%- alum.des %></p>         
+            </a>        
+        </article>
+        <% })%>   
+
+    <%}%>
+</div>

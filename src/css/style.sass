@@ -1,0 +1,191 @@
+
+
+@import 'base.sass'
+
+@import 'flow.sass'
+
+@import './_import/gallery.sass'
+
+@import 'media.sass'
+
+#header
+    width: 100% 
+    background:  #343b3c
+    & .header-nav
+        position: fixed
+        top: 0
+        right: 0
+        width: 100% 
+        z-index: 4
+        padding: 10px 16px 12px
+        
+        text-align: right  
+        background: inherit
+        color: rgba(255,255,255,.8)
+
+        display: flex
+        flex-direction: row-reverse     
+        & nav
+            cursor: pointer         
+        & strong
+            font-size: 18px
+            letter-spacing: 4px
+    & .header-inner
+        min-height: 120px       
+        text-align: center
+        margin: 0 auto
+        padding:  40px 
+        box-sizing: border-box
+        & .header-title
+            color: rgba(255,255,255,1)
+            font-size: 44px  
+            line-height: 80px
+            display: inline-block
+            border-bottom: 2px solid rgba(255,255,255,.8)           
+        & .header-des
+            color: rgba(255,255,255,.7)   
+            line-height: 80px
+            font-size: 16px
+            text-shadow: 0 2px rgba(0,0,0,0.2)
+        & .header-nav
+            color: #fff
+            margin: 20px 0
+            line-height: 40px
+
+
+.index-entry    
+    display: flex    
+    flex-wrap: wrap    
+    background:  #343b3c
+    .index-item
+        box-sizing: border-box
+        position: relative
+        width: 40%
+        height: 60vh  
+        border-radius: 2px
+        margin: 10px  
+                            
+        &:nth-child(2n)
+            flex-grow: 2            
+        &:nth-child(3n)
+            flex-grow: 2
+        &:nth-child(4n)
+            flex-grow: 2           
+        & .thumb 
+            width: 100%
+            height: 100%
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat   
+            border-radius: 2px         
+        & > .links
+            opacity: 1
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 100%
+
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            
+            overflow: hidden
+            color: #fff
+            background-color: rgba(0,0,0,0.15)  
+            & > h3               
+                font-size: 26px
+                margin: 10px 0 20px
+                letter-spacing: 3px 
+                line-height: 56px  
+                border-bottom:  2px solid rgba(255,255,255,.8)      
+            & > p              
+                font-size: 14px  
+                margin: 5px 0
+                letter-spacing: 2px      
+        &:hover      
+            & > .links
+                opacity: 0        
+
+.album-entry  
+    background: #252525     
+    & .album-inner     
+        display: flex
+        flex-wrap: wrap
+        justify-content: flex-start      
+        align-items: start
+       
+        & > .album-img           
+            padding: 0.5px 0
+            transition: all 0.1s linear 
+            width: 25%
+            height: 40vh
+            box-sizing: border-box        
+            @include mq-tablet
+                height: 25vh
+            @include mq-middle
+                height: 30vh
+            @include mq-mobile
+                width: 50% 
+                height: 30vh
+            &:hover
+                cursor: pointer
+                transform: scale(1.05)                            
+            &:hover:after
+                transform: scale(1)
+            & > img
+                width: 100%   
+                height: 100%                 
+                padding: 10px                                
+                box-sizing: border-box  
+          
+    & .album-footer
+        text-align: center
+        padding: 40px 0
+        & span
+            padding: 10px 12px
+            min-width: 60px
+            background: #343b3c
+            border-radius: 999px
+            color: rgba(#ffffff,.85)
+        
+
+
+#footer
+    width: 100%    
+    background: #40484a
+    display: flex  
+    align-items: center
+    position: relative 
+    & > div      
+        color: #fff
+        width: 50%
+        height: 120px         
+        align-items: center
+        display: flex
+        justify-content: center
+        flex-direction: column
+        & > a
+            padding: 10px
+            background: #fff
+            border-radius: 50%
+            &:hover
+                background: #343b3c
+                color: #fff
+        & > p
+            font-size: 12px
+            margin: 2px 0
+
+
+.notfound
+    background: #343b3c
+    color: #fff
+    text-align: center
+    width: 100%
+    height: 80%
+    font-size: 44px
+    
+
+@include mq-mobile            
+    @import 'mobile.sass'

@@ -1,0 +1,28 @@
+<html>
+  <head>
+
+  <title>Albums</title>
+
+  <link rel="shortcut icon" href="<%- sites.icon %>" />
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <%- css('style.css')%>
+  <%- js('bundle.js')%>
+  </head>
+
+  <body>
+
+  <div id='header'>
+    <header class='header-nav'>          
+      <nav id='home-nav'>
+        <strong>Home</strong>
+        <i class='fa fa-lg fa-certificate'></i>   
+      </nav>     
+    </header>    
+   
+      <%- main %>
+
+    <%- partial('footer',{sites:sites})%>   
+  </body>
+
+</html>

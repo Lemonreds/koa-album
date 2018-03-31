@@ -1,0 +1,10 @@
+{
+    "title": "Albums",
+    "des": "About the pohots.",
+    "icon":"/favicon.png",
+    "copyright": "© 2018 Lemon",
+    "footer":"山水一程 三生有幸",
+    "links":{
+        "github": "https://github.com/Lemonreds"
+    }
+}

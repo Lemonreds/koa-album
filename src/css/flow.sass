@@ -1,0 +1,76 @@
+
+
+
+$width : 1200px
+$height : 800px
+
+$oneColumn : $width/3 
+$twoColumn : ($width/3)*2
+
+$halfColumn : $width/2
+$row : $height/2
+
+.flow11 ,.flow12 ,.flow21
+    display: grid    
+    grid-template-rows: $row $row
+    overflow: hidden 
+    & img
+        width: 100%
+        height: 100%
+
+
+
+.flow12   
+    grid-template-columns: $twoColumn $oneColumn 
+    & > .flow12-left
+        grid-column-start: 1
+        grid-column-end: 2  
+        grid-row-start: 1
+        grid-row-end: 3       
+        & > .entry-thumb
+            height: $height   
+    & > .flow12-right
+        grid-column-start: 2 
+        grid-column-end: 3 
+        & > .entry-thumb
+            height: $height/2
+
+.flow21
+    grid-template-columns: $oneColumn $twoColumn 
+    & > .flow21-left
+        grid-column-start: 1
+        grid-column-end: 2 
+        & > .entry-thumb
+            height: $height/2            
+    & > .flow21-right          
+        grid-column-start: 2 
+        grid-column-end: 3 
+        grid-row-start: 1
+        grid-row-end: 3  
+        & > .entry-thumb
+            height: $height  
+    
+
+
+.flow11
+    grid-template-columns: $halfColumn  $halfColumn  
+    & > .flow11-left
+        grid-column-start: 1
+        grid-column-end: 2    
+        grid-row-start: 1
+        grid-row-end: 3    
+        & > .entry-thumb
+            height: $height         
+    & > .flow11-right
+        grid-column-start: 2
+        grid-column-end: 3 
+        grid-row-start: 1
+        grid-row-end: 3 
+        & > .entry-thumb
+            height: $height 
+
+.entry-thumb
+    width: 100%
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat   

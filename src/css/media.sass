@@ -1,0 +1,31 @@
+
+// by lemon 
+
+// Media queries
+// 1024  1280  1366  1440   1600  1920       
+
+// use:
+// 1. Add Meta  <meta name="viewport" content="width=device-width, initial-scale=1" />  
+// 2.
+// such:   body @include mq-mobile
+//                  font-size: 20px
+
+@mixin mq-mobile
+    @media screen and (max-width: 479px)
+        @content 
+
+@mixin mq-tablet
+    @media screen and (min-width: 480px) and (max-width: 769px)
+        @content
+
+@mixin mq-middle
+     @media screen and (min-width: 770px) and (max-width: 1023px)
+        @content
+
+@mixin mq-normal
+    @media screen and (min-width: 1024px) and (max-width: 1599px)
+        @content
+    
+@mixin mq-desktop
+    @media screen and (min-width: 1600px)
+        @content

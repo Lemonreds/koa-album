@@ -1,0 +1,63 @@
+
+
+
+.gContainer
+    position: fixed
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: 9999
+    background: #343b3c
+    overflow: hidden
+    & .gmainBox
+        position: absolute
+        left: 50%
+        top: 50%
+        width: 0
+        height: 0
+        margin: 0
+        background: #fff
+        border-radius: 2px
+        overflow: hidden
+        & > .gImg
+            position: absolute
+            top: 50%
+            left: 50%          
+            margin: 0
+            width: 0
+            height: 0
+    & .gBottom
+        position: fixed
+        width: 100%
+        max-height: 50px
+        padding: 5px 10px
+        left: 0
+        bottom: 0    
+        overflow: auto
+
+        display: flex
+        justify-content: center        
+        & > img
+            width: 50px
+            height: 50px    
+            margin: 0 1px 
+            cursor: pointer
+        & > .gActive            
+            margin: 0 8px    
+      
+
+@keyframes gSlideDown
+    0%
+         
+        opacity: 0.7
+    100%
+        opacity: 1
+
+
+.gSlideDown
+  animation-fill-mode: forwards
+  animation-name: gSlideDown
+  animation-duration: .2s  
+  animation-iteration-count: 1 
+  animation-delay: 0s
