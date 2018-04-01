@@ -1,7 +1,22 @@
 let addLoadEvent = require('./dom')
 
-const Lazyload = require('./lazyload')
+const LazyLoad = require('./lazyload')
 const Gallery = require('./gallery')
+
+
+document.ready = (cb) => {
+
+    if (document.addEventListener) {
+
+        let readyFn = () => {
+            cb()
+            document.removeEventListener('DOMContentLoaded', readyFn, false)            
+        }
+        document.addEventListener('DOMContentLoaded', readyFn)
+    } else {
+        addLoadEvent(cb)
+    }
+}
 
 
 
@@ -22,6 +37,12 @@ function initGallery() {
 }
 
 function initLazyLoad() {
+    
     let imgs = document.getElementsByClassName('lazyload')
-    let lazyload = new Lazyload(imgs)
+
+    HTMLCollection.prototype.forEach = function (cb) {
+        Array.prototype.slice.call(this).forEach(cb)
+    }
+
+    let lz = new LazyLoad(imgs)
 }

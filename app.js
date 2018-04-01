@@ -1,8 +1,10 @@
+
 const Koa = require('koa'),
     app = new Koa()
 
 
 const router = require('./lib/router'),
+    cache = require('./lib/cache')
     error = require('./lib/error')
 
 
@@ -11,6 +13,8 @@ app.use(error)
 
 // 路由
 app.use(router)
+// cache
+app.use(cache)
 
 app.listen(8888)
 console.log('server started at localhost: 8888')

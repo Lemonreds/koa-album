@@ -10,10 +10,10 @@
         <% albums.forEach((alum,idx)=>{%>  
         <article class='index-item'>
             
-            <% if(idx < 3 ){%>
-            <div class='thumb'style="background-image:url('<%-alum.thumb%>')"></div>
+            <% if(idx < 4 ){%>
+                <div class='thumb' style="background-image:url('<%-alum.thumb%>')"></div>
             <%}else{%>
-            <div class='thumb lazyload' data-src="<%-alum.thumb%>"></div>
+                <div class='thumb lazyload' data-src="<%-alum.thumb%>"></div>
             <%}%>
 
             <a class='links' href='<%- alum.href %>'>              

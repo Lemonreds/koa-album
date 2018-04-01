@@ -4,15 +4,15 @@ class Gallery {
         this.elements = elements
 
         this.isMobile() ? this.config = {
-            width: window.innerWidth * 0.96,
-            height: window.innerHeight * 0.54
-        }: this.config = {
+            width: window.innerWidth * 0.98,
+            height: window.innerHeight * 0.64
+        } : this.config = {
             width: window.innerWidth * 0.68,
             height: window.innerHeight * 0.78
         }
-        this.mainThumb = null
-        this.bottomDom = null
 
+        this.mainthumb = null
+        this.bottomDom = null
 
         this.init()
     }
@@ -30,23 +30,26 @@ class Gallery {
 
         let container = document.createElement('div'),
             mainBox = document.createElement('div'),
-            mainThumb = document.createElement('img'),
-            bottom = document.createElement('div')
+            bottom = document.createElement('div'),
+            mainthumb = document.createElement('img')
+
+
+
 
         container.className = 'gContainer'
         mainBox.className = 'gmainBox gSlideDown'
-        mainThumb.className = 'gImg'
         bottom.className = 'gBottom'
-
         this.setStyle(mainBox)
-        this.setStyle(mainThumb)
 
-        this.mainThumb = mainThumb
+
+
+        this.mainthumb = mainthumb
         this.bottomDom = bottom
+        mainBox.appendChild(mainthumb)
 
         container.appendChild(bottom)
-        mainBox.appendChild(mainThumb)
         container.appendChild(mainBox)
+
 
         container.addEventListener('click', () => {
             this.desotry()
@@ -55,8 +58,12 @@ class Gallery {
 
     }
     show(element) {
-        // mainThumb
-        this.mainThumb.src = this.getSrc(element)
+
+        // mainthumb      
+
+        this.mainthumb.src = this.getSrc(element)
+
+
         // bottomThumb
         let adjacent = this.getAdjacent(element)
         for (let index of adjacent.values()) {
@@ -101,11 +108,11 @@ class Gallery {
         }
         // 找到附近 images 张的所有thumb
         let thumb = new Set(),
-            count = this.isMobile() ? 5: 9,
+            count = this.isMobile() ? 5 : 9,
             length = this.elements.length - 1
 
         //起始坐标
-        let i = parseInt( idx-(count/2)) + 1
+        let i = parseInt(idx - (count / 2)) + 1
 
 
         for (; count > 0; i++) {
@@ -119,12 +126,22 @@ class Gallery {
             }
         }
 
-      
+
         return thumb
     }
 
 
 
+    setSrc(element, src) {
+        if (src) {
+            if ("img" === element.tagName.toLowerCase()) {
+                element.src = src
+            } else {
+                element.style.backgroundImage = "url(" + src + ")"
+            }
+        }
+
+    }
 
     getSrc(element) {
 
@@ -139,10 +156,7 @@ class Gallery {
         return src
     }
 
-    setStyle(element,
-        width = this.config.width,
-        height = this.config.height,
-        center = true) {
+    setStyle(element, width = this.config.width, height = this.config.height, center = true) {
 
         let unit = 'px',
             style = element.style
@@ -174,7 +188,6 @@ class Gallery {
         }
         return flag
     }
-
 }
 
 

@@ -7,10 +7,10 @@
     <div class='album-inner'>
         <% album.photos.forEach((photo , idx)=>{%>            
             <div class='album-img'>
-                <% if (idx<6 ){%>
-                 <img src='<%- photo %>'/>  
+                <% if (idx<6){%>
+                    <img src='<%- photo %>'/>  
                 <%} else{%>
-                 <img class='lazyload'  data-src='<%- photo %>'/>                
+                    <img class='lazyload' data-src='<%- photo %>'/>                
                 <%}%>
             </div>
         <% })%>       
