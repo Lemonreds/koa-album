@@ -10,7 +10,6 @@ const router = require('./lib/router'),
 
 // 处理意外错误
 app.use(error)
-
 // 路由
 app.use(router)
 // cache

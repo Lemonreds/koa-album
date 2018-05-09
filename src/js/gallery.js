@@ -85,6 +85,7 @@ class Gallery {
                 e.stopPropagation()
             })
 
+           
             this.bottomDom.appendChild(bottomThumb)
         }
 
@@ -153,6 +154,13 @@ class Gallery {
                 src = bgr.substring(6, bgr.length - 2)
         }
 
+        if (!src) {
+            // 避免懒加载图片时
+            // 图片路径失败的情况.
+            src = element.getAttribute('data-src')
+        }
+     
+        
         return src
     }
 

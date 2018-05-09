@@ -29,7 +29,24 @@ document.ready(() => {
     initGallery()
     initLazyLoad()   
 
+//    ajaxtest()
 })
+
+// function ajaxtest(){
+
+//     console.log(55)
+    
+//     let xhr = new XMLHttpRequest()
+//     xhr.open('GET','/ajax/11')
+
+//     xhr.onreadystatechange = ()=>{
+//             console.log(xhr.status)
+//             console.log(xhr.readyState)
+//     }
+//     xhr.send(null)
+
+// }
+
 
 function initGallery() {
     let galleryElements = document.getElementsByTagName('img')
