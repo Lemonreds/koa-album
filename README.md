@@ -2,7 +2,7 @@
 
 a web album application based on koa and node.
 
-预览 [Live Preview](http://119.29.128.237:8888/) 
+预览 [Live Preview](http://119.29.128.237) 
 
 ## Local Preview
 
@@ -35,8 +35,6 @@ gulp build
 #### TODO:
 
   - 适配更多比例不同的图片.
-  - 提高图片传输速度
-  - 优化代码
   - ~~静态资源缓存~~
 
 
