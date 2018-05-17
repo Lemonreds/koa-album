@@ -9,6 +9,7 @@ const gulp = require('gulp'),
     source = require('vinyl-source-stream')
 
 
+// sass=>css 
 gulp.task('sass', () => {
 
     return gulp.src('./src/css/style.sass')
@@ -16,6 +17,8 @@ gulp.task('sass', () => {
         .pipe(gulp.dest('static'))
 })
 
+
+// es6 模块化
 gulp.task('browserify',()=>{
 
     let config = browserify({
@@ -27,7 +30,8 @@ gulp.task('browserify',()=>{
         .pipe(gulp.dest('static'))  
 })
 
-
+// development
+// 自动监听文件修改并更新
 gulp.task('dev', () => {
 
     gulp.watch('src/css/*.sass', ['sass']) 
@@ -37,6 +41,7 @@ gulp.task('dev', () => {
     
 })
 
+// 压缩js和css,自动添加css前缀
 gulp.task('build',()=>{
 
     gulp.src('static/bundle.js')
@@ -53,5 +58,5 @@ gulp.task('build',()=>{
     .pipe(gulp.dest('static'))
 })
 
-
+// 默认任务
 gulp.task('default',['sass','browserify'])

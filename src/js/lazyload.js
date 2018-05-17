@@ -1,4 +1,7 @@
 
+/**
+ * 图片的懒加载
+ */
 let LazyLoad = (function () {
     const defaults = {
             src: 'data-src'

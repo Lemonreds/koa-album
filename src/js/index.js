@@ -1,5 +1,11 @@
-let addLoadEvent = require('./dom')
 
+/**
+ * 入口JS文件
+ */
+
+
+
+const addLoadEvent = require('./dom')
 const LazyLoad = require('./lazyload')
 const Gallery = require('./gallery')
 
@@ -22,30 +28,17 @@ document.ready = (cb) => {
 
 document.ready(() => {
 
+    // 返回主页按钮事件
     document.getElementById('home-nav').addEventListener('click', () => {
         window.location.href = '/'
     })
 
+    // 初始化图片相册
     initGallery()
+    // 初始化懒加载图片
     initLazyLoad()   
-
-//    ajaxtest()
 })
 
-// function ajaxtest(){
-
-//     console.log(55)
-    
-//     let xhr = new XMLHttpRequest()
-//     xhr.open('GET','/ajax/11')
-
-//     xhr.onreadystatechange = ()=>{
-//             console.log(xhr.status)
-//             console.log(xhr.readyState)
-//     }
-//     xhr.send(null)
-
-// }
 
 
 function initGallery() {

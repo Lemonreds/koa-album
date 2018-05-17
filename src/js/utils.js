@@ -1,6 +1,8 @@
 
 
-
+/**
+ * 是否是移动端
+ */
 function isMobile() {
 
     const userAgentInfo = navigator.userAgent,
@@ -18,5 +20,4 @@ function isMobile() {
 
 module.exports = {
     isMobile : isMobile
-
 }

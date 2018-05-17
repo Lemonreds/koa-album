@@ -1,3 +1,8 @@
+
+/**
+ * 画廊
+ */
+
 class Gallery {
 
     constructor(elements) {
